@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="sv">
+   <head>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>RUNNING COOPER</title>
+      <link rel="stylesheet" type="text/css" href="rchomepage.css" />
+   </head>
+   <!-- Koden body är uppdelad i följande delar - header, nav, main och footer. Detta efter rekommendation från webAIM-->
+   <body>
+      <!-- Lägger till en pekande hand som visas över länkarna på sidan-->
+      <span style="cursor: pointer"></span>
+      <header>
+         <!--  A-elmentet nedan gör att bilden blir en klickbar länk som leder till startsidan. -->
+         <a href="rcindex.html">
+            <img
+               id="heropic"
+               src="Bilder/Namn_logo.png"
+               alt="Running Cooper om oss-sida" />
+         </a>
+         <div class="menu-contatiner">
+            <nav>
+               <ul class="menucontainer">
+                  <li class="topmenu">
+                     <!-- Jag har valt att skriva menyvalen i stora bokstäver och i CSS:en sedan öka storleken och luftigheten (för all text på sidan) i orden
+                för att öka deras läsbarhet då endast versaler försvårar läsbarheten för personer med kognitiva svårigheter eller synnedstättningar. -->
+                     <a href="rcindex.html"> STARTSIDA</a>
+                  </li>
+                  <li class="topmenu">
+                     <a href="rcabout.html"> OM OSS</a>
+                  </li>
+                  <li class="topmenu">
+                     <a href="rcmaterial.html"> MATERIAL</a>
+                  </li>
+                  <li class="topmenu">
+                     <a href="rcnews.html"> AKTUELLT</a>
+                  </li>
+                  <li class="topmenu">
+                     <a href="rccontact.html"> KONTAKT</a>
+                  </li>
+               </ul>
+            </nav>
+         </div>
+      </header>
+
+      <main>
+         <!--Bandets spelningar är placerade i en tabell. -->
+         <h1>Aktuellt</h1>
+         <h2>Spelningar</h2>
+         <table class="table">
+            <thead>
+               <tr>
+                  <th>Evenemang:</th>
+                  <th>Datum:</th>
+                  <th>Plats:</th>
+               </tr>
+            </thead>
+            <tbody>
+               <tr class="gig">
+                  <td>Sweden Rock</td>
+                  <td>8 Juni</td>
+                  <td>Sölvesborg</td>
+               </tr>
+               <tr class="gig">
+                  <td>Storsjöteatern</td>
+                  <td>9 Juli</td>
+                  <td>Östersund</td>
+               </tr>
+               <tr class="gig">
+                  <td>Pipeline</td>
+                  <td>10 Augusti</td>
+                  <td>Sundsvall</td>
+               </tr>
+               <tr class="gig">
+                  <td>Where's the Music?</td>
+                  <td>11 September</td>
+                  <td>Norrköping</td>
+               </tr>
+               <tr class="gig">
+                  <td>Gamla Teatern</td>
+                  <td>12 Oktober</td>
+                  <td>Östersund</td>
+               </tr>
+               <tr class="gig">
+                  <td>InMusic Festival</td>
+                  <td>13 November</td>
+                  <td>Kroatien</td>
+               </tr>
+            </tbody>
+         </table>
+
+         <div class="moreinfo">
+            <p>
+               För mera information om våra spelningar och <br />
+               vad vi gör just nu, besök våra sociala medier
+            </p>
+            <br />
+            <div class="socials">
+               <a href="https://www.instagram.com/runningcooper/">
+                  <img
+                     class="instagram"
+                     src="Icons/instagramlogo.svg"
+                     alt="Instagram" />
+               </a>
+
+               <a href="https://www.facebook.com/runningcooperband/">
+                  <img
+                     class="facebook"
+                     src="Icons/Facebooklogo.svg"
+                     alt="Facebook" />
+               </a>
+
+               <a href="https://www.youtube.com/@runningcooper4302">
+                  <img
+                     class="youtube"
+                     src="Icons/youtube_tile_logo.svg"
+                     alt="Youtube" />
+               </a>
+            </div>
+         </div>
+
+         <div class="news">
+            <h2 class="rn">Just nu</h2>
+            <p class="rntext">
+               Ett kortare textstycke om vad vi gör just nu med tillhörande
+               bild.
+            </p>
+         </div>
+      </main>
+
+      <footer>
+         <!-- Länken nedan tar besökaren till kontaktsidan. -->
+         <h2 class="kontakt">
+            <a
+               href="https://utbweb.its.ltu.se/~anahaj-2/uppgift4/rccontact.html">
+               Kontakt:
+            </a>
+         </h2>
+         <!--Vanligtvis ligger även en adress till sidan längst ned i footern, men då bandet inte har någon specifik adress så ligger 
+                endast email samt telefonnummer -->
+         <img class="email" src="Icons/icon_email.svg" alt="" />
+         <p class="emailfoot">Email:</p>
+         <p class="emailadress">runningcooperband@gmail.com</p>
+         <br />
+         <br />
+         <img class="telefon" src="Icons/square_phone_icon.svg" alt="" />
+         <p class="telefonfoot">Telefon:</p>
+         <p>070-123 45 56</p>
+      </footer>
+
+      <img class="loggafoot" src="Bilder/logo_transparent.png" alt />
+      <p class="copyright">&#169; 2023 Anna Hallberg</p>
+   </body>
+</html>

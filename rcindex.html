@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<!--Sidans språk är svenska, vilket jag klargör i html-taggen nedan-->
+<html lang="sv">
+   <head>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <!--<title> är den text som visas i webbläsarens titelbar, sidans namn. -->
+      <title>RUNNING COOPER</title>
+      <!--Nedan kopplar jag html-filen till CSS-filen som styr över sidans styling-->
+      <link rel="stylesheet" type="text/css" href="rchomepage.css" />
+   </head>
+   <!-- Koden body är uppdelad i följande delar - header, nav, main och footer. Detta efter rekommendation från webAIM-->
+   <body>
+      <!-- Lägger till en pekande hand som visas över länkarna på sidan-->
+      <span style="cursor: pointer"></span>
+      <header>
+         <!--  A-elmentet nedan gör att bilden blir en klickbar länk som leder till startsidan. -->
+         <a href="rcindex.html">
+            <!-- Jag har lagt huvudbilden som ett id istället för class-->
+            <img
+               id="heropic"
+               src="Bilder/Namn_logo.png"
+               alt="Running Cooper startsida" />
+         </a>
+         <!--Nedan ligger huvudmenyn som en div, inuti div:en liggermenyn som en punktlista (ul) med länkarna till de solika sidorna -->
+         <div class="menu-contatiner">
+            <nav>
+               <ul class="menucontainer">
+                  <li class="topmenu">
+                     <!-- Jag har valt att skriva menyvalen i stora bokstäver och i CSS:en sedan öka storleken och luftigheten (för all text på sidan) i orden
+                för att öka deras läsbarhet då endast versaler försvårar läsbarheten för personer med kognitiva svårigheter eller synnedstättningar. -->
+                     <a href="rcindex.html"> STARTSIDA</a>
+                  </li>
+                  <li class="topmenu">
+                     <a href="rcabout.html"> OM OSS</a>
+                  </li>
+                  <li class="topmenu">
+                     <a href="rcmaterial.html"> MATERIAL</a>
+                  </li>
+                  <li class="topmenu">
+                     <a href="rcnews.html"> AKTUELLT</a>
+                  </li>
+                  <li class="topmenu">
+                     <a href="rccontact.html"> KONTAKT</a>
+                  </li>
+               </ul>
+            </nav>
+         </div>
+      </header>
+
+      <main>
+         <!--Inuti main-taggen ligger sidans "huvudmaterial". För att enklare kunna styla de olika delarna på sidan har jag
+        delat in de olika bitarna i div:ar -->
+         <div class="welcome">
+            <!--Använder mig av rubriktaggar på alla sidor i storleksordning. -->
+            <h1>Välkommen till Running Coopers hemsida</h1>
+            <p>
+               På denna sida hittar du information om oss, vår musik och våra
+               spelningar
+            </p>
+         </div>
+         <img
+            class="theband"
+            src="Bilder/rc_kanalbild.png"
+            alt="De 4 bandmedlemmarna i Running Cooper" />
+
+         <div class="länkar">
+            <h2>Besök våra sociala medier och kanaler</h2>
+            <div class="socials">
+               <!--Jag har valt SVG:er på alla ikoner på sidan för att kvalitén ska vara bra oberoende om sidan besöks på stor eller liten 
+                    skärm (eller vid in-zoomning).-->
+               <a href="https://www.instagram.com/runningcooper/">
+                  <img
+                     class="instagram"
+                     src="Icons/instagramlogo.svg"
+                     alt="Running Cooopers Instagram" />
+               </a>
+
+               <a href="https://www.facebook.com/runningcooperband/">
+                  <img
+                     class="facebook"
+                     src="Icons/Facebooklogo.svg"
+                     alt="Running Coopers Facebook" />
+               </a>
+
+               <a href="https://www.youtube.com/@runningcooper4302">
+                  <img
+                     class="youtube"
+                     src="Icons/youtube_tile_logo.svg"
+                     alt="Running Coopers Youtube" />
+               </a>
+            </div>
+         </div>
+      </main>
+
+      <footer>
+         <!-- Länken nedan tar besökaren till kontaktsidan. -->
+         <h2 class="kontakt">
+            <a href="rccontact.html">Kontakt:</a>
+         </h2>
+         <!--Vanöligtvis ligger även en adress till sidan längst ned i footern, men då bandet inte har någon specifik adress så ligger 
+        endast email samt telefonnummer -->
+         <img class="email" src="Icons/icon_email.svg" alt="" />
+         <p class="emailfoot">Email:</p>
+         <p class="emailadress">runningcooperband@gmail.com</p>
+         <br />
+         <br />
+         <img class="telefon" src="Icons/square_phone_icon.svg" alt="" />
+         <p class="telefonfoot">Telefon:</p>
+         <p>070-123 45 56</p>
+      </footer>
+
+      <img class="loggafoot" src="Bilder/logo_transparent.png" alt />
+      <p class="copyright">&#169; 2023 Anna Hallberg</p>
+   </body>
+</html>

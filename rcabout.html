@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="sv">
+   <head>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>RUNNING COOPER</title>
+      <link rel="stylesheet" type="text/css" href="rchomepage.css" />
+   </head>
+   <!-- Koden body är uppdelad i följande delar - header, nav, main och footer. Detta efter rekommendation från webAIM-->
+   <body>
+      <!-- Lägger till en pekande hand som visas över länkarna på sidan-->
+      <span style="cursor: pointer"></span>
+      <header>
+         <!--  A-elmentet nedan gör att bilden blir en klickbar länk som leder till startsidan. -->
+         <a href="rcindex.html">
+            <img
+               id="heropic"
+               src="Bilder/Namn_logo.png"
+               alt="Running Cooper om oss-sida" />
+         </a>
+         <div class="menu-contatiner">
+            <nav>
+               <ul class="menucontainer">
+                  <li class="topmenu">
+                     <!-- Jag har valt att skriva menyvalen i stora bokstäver och i CSS:en sedan öka storleken och luftigheten (för all text på sidan) i orden
+                för att öka deras läsbarhet då endast versaler försvårar läsbarheten för personer med kognitiva svårigheter eller synnedstättningar. -->
+                     <a href="rcindex.html"> STARTSIDA</a>
+                  </li>
+                  <li class="topmenu">
+                     <a href="rcabout.html"> OM OSS</a>
+                  </li>
+                  <li class="topmenu">
+                     <a href="rcmaterial.html"> MATERIAL</a>
+                  </li>
+                  <li class="topmenu">
+                     <a href="rcnews.html"> AKTUELLT</a>
+                  </li>
+                  <li class="topmenu">
+                     <a href="rccontact.html"> KONTAKT</a>
+                  </li>
+               </ul>
+            </nav>
+         </div>
+      </header>
+
+      <main class="aboutus">
+         <h1 class="omrc1">Om Running Cooper</h1>
+         <p class="omtext">
+            Vi har sedan starten i Östersund 2015 åstadkommit tre EP's samt en
+            radiohit i form av låten "Light Bricks". <br />
+            Våra livemeriter inkluderar INmusic Festival i Kroatien, en
+            sommarturné i Sverige 2017 samt en tur till Moldavien samma år.<br />
+            Idag har vi ny musik på gång som spelats in under hösten 2022.
+         </p>
+         <br />
+         <br />
+         <p class="omtext">
+            Vårt sound kan beskrivas som riffbaserad rock med blues- och
+            70-talskänsla á la Thin Lizzy, med lite Muse-modernitet på
+            toppen.<br />
+            Vi startades som en trio men är sedan 2018 en kvartett. All musik
+            komponerar vi tillsammans.<br />
+         </p>
+         <!--I olika skärmstorlekar använder jag mig av olika bilder. Om skärmen är mindre än 1020px så visas en bild med sämre upplösning men där medlemmarna 
+            syns bättre. -->
+         <picture>
+            <source
+               class="omoss"
+               srcset="Bilder/happy_sofa_RC.png"
+               media="(min-width: 1020px)" />
+            <img
+               class="omoss_mini"
+               src="Bilder/omoss_mini.jpg"
+               alt="Running Coopers medlemmar sitter mot en grå vägg och skrattar" />
+         </picture>
+         <br />
+         <br />
+         <br />
+         <h1 class="medlemmar">Medlemmar</h1>
+         <!-- Bandet har 4 medlemmar. Jag valde därför att dela in varje medlems information i sections och inuti dem placera div:ar för att
+        sortera dem och göra stylen tydligare och enklare. 
+        Jag har öven testat att tilldela vissa classer 2 namn för att lättare kunna styla dessa i media queriern. -->
+         <section class="aboutanna about">
+            <img
+               class="Anna pic"
+               src="Bilder/Anna1.jpg"
+               alt="Leende tjej i rockiga kläder som sitter i en lädersoffa" />
+            <div class="textanna">
+               <h2>Anna Hallberg</h2>
+               <p>
+                  Anna sjunger och spelar bas. <br />
+                  Hon skriver alla låttexter och melodier. När hon inte spelar
+                  musik dricker hon te i blåsiga Ås, stickar strumpor eller
+                  pluggar grafisk design och programmering.
+               </p>
+            </div>
+         </section>
+
+         <section class="aboutmartin about">
+            <img
+               class="Martin pic"
+               src="Bilder/Martin1.jpg"
+               alt="Leende blond kille i skinnjacka som sitter i en lädersoffa" />
+            <div class="textmartin">
+               <h2>Martin Höög</h2>
+               <p>
+                  Martin spelar gitarr och körar. <br />
+                  Han skriver musiken tillsammans med de andra och står bakom
+                  musikvideorna. När han inte filmar eller spelar musik dricker
+                  han lavahett kaffe i stugan, lyssnar på bra poddar eller
+                  promenerar med släktens hundar.
+               </p>
+            </div>
+         </section>
+
+         <section class="aboutadde about">
+            <img
+               class="Adde pic"
+               src="Bilder/Adde1.jpg"
+               alt="Skrattande mörkhårig kille med toffs som sitter i en lädersoffa" />
+            <div class="textadde">
+               <h2>Andreas "Adde" Hemmingsson</h2>
+               <p>
+                  Adde spelar trummor och körar.<br />
+                  När han inte spelar några instrument är han med sin familj,
+                  ger sin katt ostkrokar eller är i studion och letar efter
+                  kottar.
+               </p>
+            </div>
+         </section>
+         <section class="aboutsimon about">
+            <img
+               class="Simon pic"
+               src="Bilder/Simon1.jpg"
+               alt="Skrattande mörkhårig kille lutar sig mot armstödet i en lädersoffa" />
+            <div class="textsimon">
+               <h2>Simon Alfredsson</h2>
+               <p>
+                  Simon spelar gitarr, körar, är producent och
+                  inspelningstekniker.<br />
+                  När han inte shreddar på gitarr roddar han ljud och ljus åt
+                  andra band så de låter lika bra som i studion, äter pizza
+                  eller utreder livets filosofiska frågor med basker på sned.
+               </p>
+            </div>
+         </section>
+      </main>
+
+      <footer>
+         <!-- Länken nedan tar besökaren till kontaktsidan. -->
+         <h2 class="kontakt">
+            <a
+               href="https://utbweb.its.ltu.se/~anahaj-2/uppgift4/rccontact.html">
+               Kontakt:
+            </a>
+         </h2>
+         <!--Vanöligtvis ligger även en adress till sidan längst ned i footern, men då bandet inte har någon specifik adress så ligger 
+                endast email samt telefonnummer -->
+         <img class="email" src="Icons/icon_email.svg" alt="" />
+         <p class="emailfoot">Email:</p>
+         <p class="emailadress">runningcooperband@gmail.com</p>
+         <br />
+         <br />
+         <img class="telefon" src="Icons/square_phone_icon.svg" alt="" />
+         <p class="telefonfoot">Telefon:</p>
+         <p>070-123 45 56</p>
+      </footer>
+
+      <img class="loggafoot" src="Bilder/logo_transparent.png" alt />
+      <p class="copyright">&#169; 2023 Anna Hallberg</p>
+   </body>
+</html>

@@ -1,0 +1,551 @@
+body {
+    background-color: #1A272A;
+    font-family: Verdana, Helvetica, Arial, sans-serif;
+    /* Jag gör texten på sidan extra lufigt för bättre läslighet och tydliga bokstäver */
+    font-stretch: extra-expanded;
+    color:black;
+    text-align: center;
+    /* För att sidan ska kännas luftigare och inte ha material som ligger kant i kant med skärmens nedersta
+    kant så har jag lagt till padding på 50px */
+    padding-bottom: 50px; 
+}
+a:focus, input:focus, textarea:focus {
+    /*För att tydliggöra fokus vid tabb-navigering har jag efter rekommendation från WCAG förstärkt
+fokusmarkeringen med större ram och gul bakgrundsfärg. För att även fälten i formuläret ska ha 
+samma utseende vid fokusmarkeing har jag lagt till input och textarea */
+    border: 3px solid black; 
+    background-color:#ffff07;
+}
+a:visited {
+    /* Länkar som besökts av användaren blir lila. Detta då det är en konvention och de
+    flesta besökarna vet vad det betyder. */
+    color: purple;
+}
+.index {
+    /* Följande index-klasser är lättare styling for index-sidan som är den första sidan innan du kommer in 
+    på själva grundhemsidan*/
+    background-color: #FFFF;
+    color: black;
+    text-align: left;
+    margin: 50px;
+    font-size: 1.2rem;
+}
+.index a {
+    text-decoration: underline;
+    font-size: 1.2rem;
+    color: blue;
+}
+p {
+    /* Textstorleken för all brödtext på sidan är ställda i formatet rem. 1.2rem motsvarar ca 14pt eller 19 px 
+    OBS alla textstorlekar för sidan är ställda i rem som utgår från rotelementet*/
+    font-size: 1.2rem;
+}
+#heropic {
+     /*Herobilden, dvs bildern i headern, samt alla andra bilders width ät angivna i % och height på auto för att
+    bilderna ska vara responsiva. */
+    max-width: 60%;
+    height: auto;
+    /*Av någon anledning låg bilden för långt till vänster i alla lägen och det enda sättat jag lyckades fixa
+    via var att ställa paddingen på minus.*/
+    margin-left: -30px;
+}
+
+/*I de flesta fallen skapar jag olika div:ar med mindre div:ar i för att kunna använda mig av flexbox 
+och få till önskad design */
+
+
+/* MENY-inställningar/styling*/
+.menucontainer {
+    /* Använder mig av display flex för att göra menyn horisontal */
+    display: flex;
+    list-style-type: none;
+    background-color: lightgray;
+    /* Jag har varlt att lägga lite marginal runt on hela menyn för att göra sidan luftigare. */
+    margin: 10px;
+    /* Jag ökar textstorleken något i menyn för att tydliggöra den*/
+    font-size: 1.3rem;
+}
+/* inställningar för länkarna (a) i huvudmenyn */
+.menucontainer a {
+    display: block;
+    /* Jag shorthandar paddingen, det vill säga att istället för att ange värdet för varje sida så anger jag topp&botten 
+    i första samt vänster&höger i andra.
+    Paddingen gör att klickytan på länkarna blir större än bara texten och där med lättare att klicka på*/
+    padding: 15px 10px; 
+    text-decoration: none;
+    color: #333;
+    /* Det skapades en tom ruta längst till vänter i menyn som jag ej nådde i med hovringseffekten, använde därför
+    minus på margin för att den skulle försvinna */
+    margin-left: -40px; 
+}
+/* Inställningar för listalternativen (li) i huvudmenyn. Använder mig av flexbox auto för att utrymmet ska fördelas
+jämnt på meny-elementen*/
+.menucontainer li {
+    flex: auto;
+}
+/* Ställer in hovringseffekt på menyn så att användaren kan se klickytan samt vart pekaren befinner sig*/
+.menucontainer li a:hover {
+    background-color: #555;
+    color: #FFFF;
+}
+/* Om skärmen är 768px eller mindre så lägger sig menyn vertikalt lägeså användaren slipper scrolla i sidled samt att 
+huvudbilden, heropicture, blir responsiv för mindre skärmar*/
+@media all and (max-width: 768px) {
+    .menucontainer {
+       flex-direction: column;
+    }
+    #heropic {
+        max-width: 100%;
+        height: auto;
+    }
+ }
+
+
+/* FOOTER samt logga och copyright-inställningar*/
+footer{
+    background-color: lightgray;
+    color:black; 
+    text-align: left;
+    margin-top: 40px;
+    font-stretch: extra-expanded;
+    padding-bottom: 40px;
+}
+/*För att ikonerna och de olika textraderna ska visas på en sammanhängande rad i footern använder jag mig av
+följande kod. */
+footer h3, p {
+    display: inline;
+}
+/*Order kontakt i footern är en länk till själva kontaktsidan */
+.kontakt, a {
+    color: black; 
+    text-decoration: none;
+    margin-left: 22px; 
+    padding-top: 40px; 
+}
+.kontakt a:hover {
+    text-decoration: underline;
+}
+.email{
+    max-height: 30px; 
+    max-width: 65px;
+    margin-left: auto;
+    margin-right: 10px;
+    /*För att email-ikonen ska placeras i samma höjd som emailadressen har jag satt margin-bottom på minus.
+    På skärmar med 768px eller mindre så försvinner ikonerna helt.*/
+    margin-bottom: -8px;
+    padding-left: 30px;
+}
+.emailadress {
+    text-decoration: underline;
+}
+.telefon{
+    max-height: 30px; 
+    max-width: 65px;
+    margin-left: auto;
+    margin-right: 10px;
+    /*För att telefon-ikonen ska placeras i samma höjd som telefonnummret har jag satt margin-bottom på minus.
+    På skärmar med 768px eller mindre så försvinner ikonerna helt.*/
+    margin-bottom: -8px;
+    padding-left: 30px;
+}
+/*Bandets logotyp samt copyright-märket ligger nedanför footern.
+Följande två kodblock placerar dessa i mitten av sidan och gör dem responsiva. */
+.loggafoot {
+    padding: 30px 30px;
+    margin: auto; 
+    display: flex;
+    max-width: 150px; 
+    max-height: 100px;
+}
+.copyright {
+    color: white; 
+    margin-bottom: 20px; 
+    font-size: 1em;
+    text-align: center;
+}
+/*Om  skärmen är 768px eller mindre tar ikonerna bort och kontaktinformationen i footern centreras. */
+@media screen and (max-width: 768px) {
+    .telefon {
+        display: none;
+    }
+    .email {
+        display: none;
+    }
+    footer {
+     display: block;
+     text-align: center;
+    }
+    .emailfoot {
+        font-weight: bold;
+    }
+    .telefonfoot {
+        font-weight: bold;
+    }
+    .kontakt a {
+        margin-left: auto;
+    }
+ }
+
+
+/*MAIN-inställningar för materialet i mitten på varje sida*/
+main {
+    /*För att skapa kontrast och känslan av avdelning på sidan är main-elementet en vit bakgrund på alla sidor */ 
+    background-color: #FFFDFA;
+    max-width: 100%;
+    height: auto;
+    margin-left: 190px;
+    margin-right: 190px;
+    padding: 50px 50px;
+}
+/*På skärmar mindre än 850px så tar main-elementets margins på höger och vänster sida bort för att materialet ska bli läsbart*/
+@media screen and (max-width: 850px) {
+    main {
+        background-color: #FFFDFA;
+        background-size: cover;
+        margin: 0px;
+    }
+ }
+
+
+/*STARTSIDAns styling*/
+.theband {
+    padding: 20px 5px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%; 
+    height: auto; 
+}
+.länkar {
+    margin-top: 50px; 
+}
+.socials {
+    margin-top: 40px;
+    margin-bottom: 30px;
+}
+.instagram {
+    max-width: 60px;
+    max-height: 60px;
+}
+/*Hovringseffekter på alla länkarna (ikonerna) är skuggningar för att skapa mera "knapp"-känsla */
+.instagram:hover {
+    border-radius: 9px;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+.facebook {
+    max-width: 60px;
+    max-height: 60px;
+    /*Alla ikoner utom facebook-logon hade rundade kanter så lägger till det här nedan för att 
+    alla 3 ska se lika ut */ 
+    border-radius: 9px;
+}
+.facebook:hover {
+    border-radius: 9px;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+.youtube {
+    max-width: 60px;
+    max-height: 60px;
+}
+.youtube:hover {
+    border-radius: 9px;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+
+/*OM OSS-sidans styling*/
+/*Här är styling för alla bandmedlemmars information */
+.omrc1 {
+    text-align: center;
+}
+.omtext {
+    margin-bottom: 40px;
+}
+.picture {
+    margin-top: 40px;
+}
+.aboutus {
+    text-align: left;
+}
+.omoss {
+    max-width: 80%; 
+    height: auto;
+    margin-top: 30px;
+    
+}
+.omoss_mini {
+    width: 100%;
+    height: auto;
+    margin-top: 30px;
+}
+.medlemmar {
+    text-align: center;
+    padding-top: 50px;
+}
+.aboutanna {
+    padding-bottom: 50px;
+    display: flex;
+}
+.Anna {
+    max-width: 50%; 
+    height: auto;
+    flex: 50%;
+    padding-right: 20px;
+}
+.textanna {
+    flex: 50%;
+}
+/*Martin och Simons information är högerjusterat för att skapa dynamik och en lekfullare design */
+.aboutmartin {
+    padding-bottom: 50px;
+    display: flex;
+    flex-direction: row-reverse;
+}
+.Martin {
+    max-width: 50%; 
+    height: auto;
+    flex: 50%;
+}
+.textmartin {
+    flex: 50%;
+}
+.aboutadde {
+    padding-bottom: 50px;
+    display: flex;
+}
+.Adde {
+    max-width: 50%; 
+    height: auto;
+    flex: 50%;
+    padding-right: 20px;
+}
+.textadde {
+    flex: 50%;
+}
+.aboutsimon {
+    padding-bottom: 50px;
+    display: flex;
+    flex-direction: row-reverse;
+}
+.Simon {
+    max-width: 50%; 
+    height: auto;
+    flex: 50%;
+}
+.textsimon {
+    flex: 50%;
+}
+/*Om skärmen är mindre än 1020px så döljs bilderna för varje medlem och deras tillhörande texter vänsterplaceras. */
+@media screen and (max-width: 1020px) {
+    .medlemmar{
+        margin-top: -40px;
+    }
+    .about {
+        display: block;
+        flex-direction: column;
+        text-align: left;
+    }
+    .pic {
+        display: none;
+    }
+  }
+
+
+/*MATERIAL-sidans styling*/
+/*Spotify-spelaren samt Youtube-klippens storlekar och styling ligger i deras <iframe> i HTML-koden, då jag försökte dela upp 
+den koden och placera här i CCS:en så blev de ej responsiva.*/
+.div1 {
+    padding-bottom: 40px; 
+    border-radius: 12px; 
+}
+.div2 {
+    padding-bottom: 40px; 
+    margin: auto; 
+}
+.div3 {
+    padding-bottom: 40px; 
+    margin: auto; 
+}
+/*På skärmar mindre än 768px ändras paddingen för elementen */
+@media screen and (max-width: 768px) {
+    .div1 {
+        padding: 20px;
+    }
+    .iframe1 {
+        border-radius: 12px;
+    }
+    .div2 {
+        padding: 20px;
+    }
+    .div3 {
+        padding: 20px;
+    }
+ }
+
+
+/*KONTAKT-sidans styling*/
+.contact {
+    /*De 3 kontaktuppgifterna är grupperade och indelade via flexbox så de tar lika stor plats var i huvud-div:en */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+} 
+.contact1 { 
+   padding-bottom: 40px;
+}
+.contact2 {
+    padding-bottom: 40px;
+}
+.contact3 {
+    padding-bottom: 40px;
+} 
+.facebooklink {
+    text-decoration: underline;
+    font-size: 1.2rem;
+}
+/*Stylingen för kontaktformuläret. */ 
+
+.sendmess {
+    margin-top: 50px;    
+}
+.message { 
+    margin-left: 50px;
+    margin-right: 50px;
+    display: flex;
+    justify-content: center; 
+}   
+/*Stylingen för input-rutan "Ditt namn". Grundinställningen gav en annan font på texten, så den är ändrad
+för att följa samma stil som övrig text på sidan. Jag har även förstorat storleken på texten för bättre läslighet.  */ 
+.yourname {
+    width: 100%;
+    height: auto;
+    padding: 12px 20px;
+    display: inline-block;
+    border: 1px solid black;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-family: Verdana, Helvetica, Arial, sans-serif;
+    font-size: 1.1rem;
+}
+/*Styling och placering för rubrikerna(lable) för inputrutorna*/
+main lable {
+    font-size: 1.3rem;
+    text-align: left;
+}
+.yourmessage {
+    /* Stylingen för större rutan där användaren kan beskriva sitt ärende i textform.*/
+    width: 100%;
+    height: 150px;
+    margin-bottom: 15px;
+    padding: 12px 20px;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid black;
+    border-radius: 5px;
+    box-sizing: border-box; 
+    font-family: Verdana, Helvetica, Arial, sans-serif;
+    font-size: 1.1rem;
+}
+.kontaktuppgifter {
+    font-size: 1rem;
+}
+.button {
+    margin-top: 15px;
+    background-color: #CBF3BC;
+    color: black;
+    /*Jag testade att short-handa stylingen för border, det funkade fint i Chrome men då stämde det inte i Safari, där av
+    flera separata kodrader */
+    border-style: solid;
+    border-color: black;
+    border-radius: 5px;
+    font-size: 1.3rem;
+    padding: 14px 40px;
+}
+/* När besökaren hovrar över knappen så har jag lagt till dubbla skuggor som tillsammans ger effekten att knappen rör
+på sig. Den första skuggan visas 12px nedanför knappen och skuggans spridning är 16px. Den andra 17px nedanför samt 
+50px*/
+.button:hover {
+    /* Värdet i rgba(red, green, blue, ALPHA) bestämmer opaciteten på skuggan*/
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+main lable {
+    display: block;
+    cursor: default;
+    margin-bottom: 10px;
+}
+@media screen and (max-width: 850px) {
+    /*På skärmar mindre än 850px så förminskades input-rutorna för mycket, där av följande kod för att förhindra det*/ 
+    .yourname {
+        width: auto;
+    }
+    .yourmessage {
+        width: auto;
+    }
+
+}
+
+
+/*AKTUELLT-sidans styling*/
+/*För bandet spelningar har jag skapat en tabell. */ 
+.table {
+    width: 60%;
+    /*Collapse gör så att alla celler i tabellen delar gränser med varandra */ 
+    border-collapse: collapse;
+    margin: 0 auto;
+    font-size: 1.2rem;
+    padding-bottom: 20px;
+}
+td, th {
+    /*För att tabellen ska bli enklare att läsa så är ramarna gråa medans texten är svart. */
+    border: 2px solid lightgray;
+    text-align: left;
+    padding: 10px;
+  }
+/* Följande kod gör så att var 3e rad i tabellen har en grå bakgrundsfärg. Detta för att göra så att tabellen blir enklare att följa. */
+tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+.moreinfo  {
+    margin-top: 50px;
+}
+/*För att tydliggöra delen med bandet nyheter har jag skapat en ram runt div:en*/
+.news {
+    border: 2px solid black;
+    padding-bottom: 40px;
+}
+/*Tecket ">" visar att stylingen ska vara för klassen news child textstycken */
+.news > p {
+        font-size: 1.2rem;
+        text-align: left;
+        padding: 20px;
+}
+/*För skärmar mindre är 1020px så placeras tabellen om till vertikala kolumner för varje spelning samt att rubrikerna (th) tas bort */
+@media screen and (max-width: 1020px) {
+    table thead th{
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 16px;
+    }
+    table thead th{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-bottom: 8px;
+        border-style: none;
+    }
+    table tbody tr {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 16px;
+      }
+      table tbody td {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-bottom: 8px;
+        border-style: none;
+      }
+      .gig {
+        border-style: solid;
+      }
+}

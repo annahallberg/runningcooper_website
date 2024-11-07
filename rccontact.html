@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="sv">
+   <head>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>RUNNING COOPER</title>
+      <link rel="stylesheet" type="text/css" href="rchomepage.css" />
+   </head>
+   <!-- Koden body är uppdelad i följande delar - header, nav, main och footer. Detta efter rekommendation från webAIM-->
+   <body>
+      <!-- Lägger till en pekande hand som visas över länkarna på sidan-->
+      <span style="cursor: pointer"></span>
+      <header>
+         <!--  A-elmentet nedan gör att bilden blir en klickbar länk som leder till startsidan. -->
+         <a href="rcindex.html">
+            <img
+               id="heropic"
+               src="Bilder/Namn_logo.png"
+               alt="Running Cooper om oss-sida" />
+         </a>
+         <div class="menu-contatiner">
+            <nav>
+               <ul class="menucontainer">
+                  <li class="topmenu">
+                     <!-- Jag har valt att skriva menyvalen i stora bokstäver och i CSS:en sedan öka storleken och luftigheten (för all text på sidan) i orden
+                för att öka deras läsbarhet då endast versaler försvårar läsbarheten för personer med kognitiva svårigheter eller synnedstättningar. -->
+                     <a href="rcindex.html"> STARTSIDA</a>
+                  </li>
+                  <li class="topmenu">
+                     <a href="rcabout.html"> OM OSS</a>
+                  </li>
+                  <li class="topmenu">
+                     <a href="rcmaterial.html"> MATERIAL</a>
+                  </li>
+                  <li class="topmenu">
+                     <a href="rcnews.html"> AKTUELLT</a>
+                  </li>
+                  <li class="topmenu">
+                     <a href="rccontact.html"> KONTAKT</a>
+                  </li>
+               </ul>
+            </nav>
+         </div>
+      </header>
+
+      <main>
+         <h1>Kontakt</h1>
+         <div class="contact">
+            <div class="contact1">
+               <h2>Email:</h2>
+               <p class="emailadress">runningcooperband@gmail.com</p>
+            </div>
+            <div class="contact2">
+               <h2>Facebook:</h2>
+               <a
+                  class="facebooklink"
+                  href="https://www.facebook.com/runningcooperband/"
+                  >Länk till Facebook</a
+               >
+            </div>
+            <br />
+            <br />
+            <br />
+            <div class="contact3">
+               <h2>Telefon:</h2>
+               <p>070-123 45 56</p>
+            </div>
+         </div>
+
+         <h2 class="sendmess">Skicka ett meddelande till oss:</h2>
+         <div class="message">
+            <!--Följande formulär är endast fiktivt och skickar inte informationen någonstans-->
+            <form class="form">
+               <div class="name">
+                  <br />
+                  <!--Följande kod skapar en inmatningsruta med texten "Ditt namn" -->
+                  <lable for="yourname" class="lablename">Namn: </lable>
+                  <input class="yourname" type="text" name="namn" />
+                  <br />
+               </div>
+               <div>
+                  <!-- Taggen textarea möjliggör att användaren i det nedre högra hörnet även kan öka eller minska storleken på texturan. 
+                    I textrutan står texten meddlande-->
+                  <br />
+                  <br />
+                  <lable for="yourmessage" class="lablemess"
+                     >Meddelande:
+                  </lable>
+                  <textarea class="yourmessage" name="beskrivning"></textarea>
+                  <br />
+               </div>
+               <p class="kontaktuppgifter">
+                  Lämna gärna kontaktuppgifter så vi kan nå dig
+               </p>
+               <br />
+               <!--Knapp som skickar iväg formuläret-->
+               <button class="button" type="button" style="cursor: pointer">
+                  Skicka
+               </button>
+            </form>
+         </div>
+      </main>
+
+      <footer>
+         <!-- Länken nedan tar besökaren till kontaktsidan. -->
+         <h2 class="kontakt">
+            <a
+               href="https://utbweb.its.ltu.se/~anahaj-2/uppgift4/rccontact.html">
+               Kontakt:
+            </a>
+         </h2>
+         <!--Vanöligtvis ligger även en adress till sidan längst ned i footern, men då bandet inte har någon specifik adress så ligger 
+                endast email samt telefonnummer -->
+         <img class="email" src="Icons/icon_email.svg" alt="" />
+         <p class="emailfoot">Email:</p>
+         <p class="emailadress">runningcooperband@gmail.com</p>
+         <br />
+         <br />
+         <img class="telefon" src="Icons/square_phone_icon.svg" alt="" />
+         <p class="telefonfoot">Telefon:</p>
+         <p>070-123 45 56</p>
+      </footer>
+
+      <img class="loggafoot" src="Bilder/logo_transparent.png" alt />
+      <p class="copyright">&#169; 2023 Anna Hallberg</p>
+   </body>
+</html>
